@@ -1,0 +1,127 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    min-block-size: 100vh;
+}
+
+.header {
+    min-inline-size: 100%;
+    font-weight: 700;
+    font-size: 18.5px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline-start: 65px;
+    padding-inline-end: 50px;
+    padding-block-start: 65px;
+}
+
+.header__description {
+    display: flex;
+    gap: 20px;
+    align-items: end;
+}
+
+.header__page-name {
+    font-weight: 700;
+    font-size: 50px;
+}
+
+.logo-img {
+    max-block-size: 60px;
+}
+
+.header__menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    padding-block-start: 5px;
+}
+
+.header__menu-link {
+    display: block;
+    padding: 18px;
+    background-color: #f1f1f1;
+    border-radius: 63px;
+}
+
+.header__menu-list-img {
+    inline-size: 22px;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-block-size: 100%;
+    font-weight: 600;
+    font-size: 30px;
+    flex-grow: 1;
+}
+
+.main-order {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 0 50px 30px;
+    gap: 30px;
+}
+
+.main__navigation {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    max-inline-size: 850px;
+}
+
+.main__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    block-size: 175px;
+    inline-size: 250px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px 8.5px rgba(0, 0, 0, 0.1);
+}
+
+.main__link-img {
+    max-inline-size: 75px;
+    max-block-size: 75px;
+}
+
+.main__link-description {
+    display: block;
+    align-self: end;
+}
+
+.section {
+    display: grid;
+    box-shadow: 0 0 15px 8.5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    block-size: 100%;
+}
+
+.menu-section {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 67px repeat(auto-fit, minmax(1px, 1fr));
+    column-gap: 15px;
+    row-gap: 20px;
+}
+
+.menu-navigation {
+    grid-column: span 5;
+    background-color: #f1f1f1;
+    border-radius: 63px;
+    padding-block: 8.5px;
+    padding-inline: 20px;
+    max-block-size: 67px;
+}
+
+.menu-list {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    font-size: 15px;
+}
