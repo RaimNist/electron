@@ -62,7 +62,14 @@
 .main-order {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    padding: 0 50px 30px;
+    padding: 30px 50px 30px;
+    gap: 30px;
+}
+
+.main-menu {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 30px 50px 30px;
     gap: 30px;
 }
 
@@ -96,18 +103,16 @@
 }
 
 .section {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 0 0 15px 8.5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
     border-radius: 15px;
     block-size: 100%;
 }
 
-.menu-section {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 67px repeat(auto-fit, minmax(1px, 1fr));
-    column-gap: 15px;
-    row-gap: 20px;
+.action-section {
+    padding-block-start: 20px;
 }
 
 .menu-navigation {
@@ -117,6 +122,7 @@
     padding-block: 8.5px;
     padding-inline: 20px;
     max-block-size: 67px;
+    margin-block-start: 20px;
 }
 
 .menu-list {
@@ -124,4 +130,60 @@
     gap: 10px;
     overflow-x: scroll;
     font-size: 15px;
+    justify-content: center;
+}
+
+.menu-list-item-btn {
+    padding-block: 7px;
+    padding-inline: 15px;
+    border: none;
+}
+
+.menu-list-item-btn:focus {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.section__cards {
+    min-block-size: calc(100% - 48px - 20px);
+    min-inline-size: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(auto-fit, minmax(1px, 1fr));
+    column-gap: 15px;
+    row-gap: 20px;
+    overflow-y: scroll;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.section__action-cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.card {
+    align-self: center;
+    justify-self: center;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    block-size: 100%;
+    inline-size: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr 0.3fr 0.3fr;
+}
+
+.section__action-cards .card {
+    grid-template-rows: 1fr;
+}
+
+.action-card {
+    grid-column: 1 / 2;
+}
+
+.order-section {
+    align-items: center;
+    gap: 5px;
 }
