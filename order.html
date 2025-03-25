@@ -70,5 +70,29 @@
             <span class="null-order">Добавьте товары</span>
         </section>
     </main>
+    
+    <script>
+        async function loadMenu() {
+            const menu = await window.api.getMenu();
+            const section = document.querySelector('.section__cards');
+            section.innerHTML = menu.map(item => `
+                <article class="menu-card">
+                    <h3>${item.name}</h3>
+                    <p>${item.price}₽</p>
+                    <button onclick="addToOrder(${item.id}, '${item.name}', ${item.price})">Добавить</button>
+                </article>
+            `).join('');
+        }
+    
+        function addToOrder(id, name, price) {
+            const orderSection = document.querySelector('.order-section');
+            orderSection.innerHTML += `
+                <div class="order-item">${name} - ${price}₽</div>
+            `;
+        }
+    
+        loadMenu();
+    </script>
+    
   </body>
 </html>

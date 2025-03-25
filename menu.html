@@ -76,5 +76,23 @@
             </div>
         </section>
     </main>
+
+    <script>
+        async function loadMenu() {
+            const menu = await window.api.getMenu();
+            console.log('📌 Полученные данные:', menu); // Проверяем в консоли
+    
+            const section = document.querySelector('.section__cards');
+            section.innerHTML = menu.map(item => `
+                <article class="menu-card">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <p>${item.price}₽</p>
+                </article>
+            `).join('');
+        }
+    
+        loadMenu();
+    </script>
   </body>
 </html>

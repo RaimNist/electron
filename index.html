@@ -58,5 +58,21 @@
             </a>
         </nav>
     </main>
+
+    <script>
+        async function loadEmployees() {
+            const employees = await window.api.getEmployees();
+            const list = document.createElement('ul');
+            employees.forEach(emp => {
+                const li = document.createElement('li');
+                li.textContent = `${emp.name} - ${emp.position}`;
+                list.appendChild(li);
+            });
+            document.body.appendChild(list);
+        }
+    
+        loadEmployees();
+    </script>
+    
   </body>
 </html>
